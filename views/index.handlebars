@@ -1,32 +1,60 @@
-<h1>Burgers</h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Eat-Da-Burger</h1>
 
-<h2>Eat-Da-Burger</h2>
+  </div>
+</div>
 
-<ul>
-  {{#each burgers}}
-  {{#unless devoured}}
-  {{> burgers/burger-block devoured=true}}
-  {{/unless}}
-  {{/each}}
-</ul>
+<div class="container">
 
-<h2>Burgers you've ate</h2>
+  <div class="row">
+    <div class="card col-lg">
+      <h2 class="center card-header">Add a Burger</h2>
 
-<ul>
-  {{#each burgers}}
-  {{#if devoured}}
-  {{> burgers/burger-block devoured=false}}
-  {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burgerinput">BurgerName:</label>
-    <input type="text" id="burgerinput">
+      <form class="create-form center">
+        <div class="form-group">
+          <label for="burgerinput">BurgerName:</label>
+          <input type="text" id="burgerinput">
+        </div>
+        <button id="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
   </div>
 
-  <button id="submit">Submit</button>
-</form>
+  <div class="row">
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-header">
+          <h2 class="center">Menu</h2>
+        </div>
+        <ul class="list-group list-group-flush center">
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burgers/burger-block devoured=true}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm">
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="center">Burgers you've ate</h2>
+        </div>
+        <ul class="list-group list-group-flush center">
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burgers/burger-block devoured=false}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm">
+      <img src="assets/burger-db.png" alt="burger meme">
+    </div>
+  </div>
+</div>

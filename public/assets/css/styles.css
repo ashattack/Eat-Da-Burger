@@ -1,0 +1,16 @@
+.jumbotron {
+    text-align      : center;
+    color           : tan;
+    background-color: maroon !important;
+    height          : 5
+}
+
+.center {
+    text-align: center;
+}
+
+img {
+    height: 20em;
+    width : 25em;
+    float : left;
+}
